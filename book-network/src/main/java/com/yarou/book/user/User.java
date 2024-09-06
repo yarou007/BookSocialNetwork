@@ -1,5 +1,7 @@
 package com.yarou.book.user;
 
+import com.yarou.book.book.Book;
+import com.yarou.book.history.BookTransactionHistory;
 import com.yarou.book.role.Role;
 import jakarta.persistence.*;
 import lombok.*;
@@ -34,22 +36,25 @@ public class User implements UserDetails, Principal {
     @Id
     @GeneratedValue
     private Integer id;
-
     private String firstname;
     private String lastname;
     private LocalDate dateOfBirth;
-
     @Column (unique = true)
     private String email;
-
     private String password;
-
     private boolean accountLocked;
     private boolean enabled;
 
     @ManyToMany(fetch = FetchType.EAGER)
-
     private List<Role> roles;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Book> books;
+
+
+    @OneToMany(mappedBy = "user")
+    private List<BookTransactionHistory> histories;
+
 
 
     @CreatedDate
