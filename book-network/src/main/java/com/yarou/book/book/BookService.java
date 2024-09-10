@@ -3,6 +3,7 @@ package com.yarou.book.book;
 
 import com.yarou.book.common.PageResponse;
 import com.yarou.book.exception.OperationNotPermittedException;
+import com.yarou.book.file.FileStorageService;
 import com.yarou.book.history.BookTransactionHistory;
 import com.yarou.book.history.BookTransactionHistoryRepository;
 import com.yarou.book.user.User;
@@ -28,6 +29,7 @@ public class BookService {
 
      private final BookMapper bookMapper;
      private final BookRepository bookRepository;
+     private final FileStorageService fileStorageService;
      private final BookTransactionHistoryRepository transactionHistoryRepository;
     public Integer save(BookRequest request, Authentication connectedUser) {
         User user = (User) connectedUser.getPrincipal(); // return the connected user
@@ -213,7 +215,7 @@ public class BookService {
         Book book = bookRepository.findById(bookId)
                 .orElseThrow(()->new EntityNotFoundException("No book found with id: "+ bookId));
         User user = (User) connectedUser.getPrincipal();
-        var bookCover = fileStorageService.saveFile(file,book,user.getId());
+        var bookCover = fileStorageService.saveFile(file,user.getId());
         book.setBookCover(bookCover);
         bookRepository.save(book);
 
