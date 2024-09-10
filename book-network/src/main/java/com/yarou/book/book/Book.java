@@ -32,6 +32,7 @@ public class Book extends BaseEntity {
 
     private  String synopsis;
 
+    // String it's the file path of the uploded picture
     private String bookCover;
 
     private boolean archived;
