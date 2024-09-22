@@ -1,6 +1,7 @@
 package com.yarou.book.book;
 
 import com.yarou.book.common.BaseEntity;
+import com.yarou.book.feedback.Feedback;
 import com.yarou.book.history.BookTransactionHistory;
 import com.yarou.book.user.User;
 import jakarta.persistence.*;

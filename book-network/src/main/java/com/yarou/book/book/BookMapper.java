@@ -1,6 +1,7 @@
 package com.yarou.book.book;
 
 
+import com.yarou.book.file.FileUtils;
 import com.yarou.book.history.BookTransactionHistory;
 import org.springframework.stereotype.Service;
 
@@ -28,8 +29,7 @@ public class BookMapper {
                 .archived(book.isArchived())
                 .shareable(book.isShareable())
                 .owner(book.getOwner().fullName())
-                //todo implement this later
-                //.cover()
+                .cover(FileUtils.readFileFromLocation(book.getBookCover()))
 
                 .build();
     }

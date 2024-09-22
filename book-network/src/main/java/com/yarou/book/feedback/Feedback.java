@@ -1,6 +1,7 @@
-package com.yarou.book.book;
+package com.yarou.book.feedback;
 
 
+import com.yarou.book.book.Book;
 import com.yarou.book.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
