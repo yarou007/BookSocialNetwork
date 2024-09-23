@@ -22,7 +22,7 @@ import static java.io.File.*;
 public class FileStorageService {
 
 
-    @Value("${application.file.upload.photos-output-path}")
+    @Value("${application.file.uploads.photos-output-path}")
     private String fileUploadPath;
 
     public String saveFile(@NonNull MultipartFile sourceFile /*uploaded file’s data and metadata */,

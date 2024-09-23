@@ -1,9 +1,11 @@
 package com.yarou.book.feedback;
 
 import com.yarou.book.book.Book;
+import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
+@Service
 public class FeedbackMapper {
 
 

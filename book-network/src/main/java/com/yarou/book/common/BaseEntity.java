@@ -27,7 +27,6 @@ import java.time.LocalDateTime;
         No Entity Relationships
 */
 @EntityListeners(AuditingEntityListener.class)
-
 public class BaseEntity {
 
     @Id

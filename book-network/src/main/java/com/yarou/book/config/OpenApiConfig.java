@@ -30,7 +30,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
         servers = {
                 @Server(
                         description = "local ENV ",
-                        url = "http://localhost:8088/api/v1"
+                        url = "http://localhost:8088/api/v1/"
                 ),
                 @Server(
                         description = "Prod env",
@@ -40,8 +40,8 @@ import io.swagger.v3.oas.annotations.servers.Server;
         security = {
                 @SecurityRequirement(
                         name = "bearerAuth"
-                )
-        }
+               )
+       }
 )
 
 @SecurityScheme(
